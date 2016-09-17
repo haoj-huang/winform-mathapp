@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Numerics;
@@ -11,7 +10,7 @@ using Expr = MathNet.Symbolics.Expression;
 using Eval = MathNet.Symbolics.Evaluate;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApplication1
+namespace mathapp
 {
     static class Program
     {
@@ -29,7 +28,7 @@ namespace WindowsFormsApplication1
 
     class Util
     {
-        //讲字符串形式的数字转为Expr形式
+        //将字符串形式的数字转为Expr形式
         public static Expr parseNum(string str)
         {
             int index = 0;
@@ -45,7 +44,7 @@ namespace WindowsFormsApplication1
                 else
                     return Expr.Zero - temp;
             }
-            else if (str[index] >= '0' && str[index] <= '9') //数字来了
+            else if (str[index] >= '0' && str[index] <= '9')
             {
                 token_val = str[index] - '0';
                 if (token_val > 0) //数字第一位大于0
@@ -113,7 +112,7 @@ namespace WindowsFormsApplication1
                 return Expr.Undefined;
         }
 
-        //将一个Expr按+，-拆分开
+        //统计一个Expr的项数
         public static int numberOfTerm(Expr input)
         {
             int n = 0;
@@ -181,7 +180,7 @@ namespace WindowsFormsApplication1
 
             return n;
         }
-        //将一个Expr按+，-拆分为多个单独的Expr
+        //将一个Expr按+，-拆分为多个单项Expr
         public static Queue<Expr> extractTermFromExpr(Expr input)
         {
             Queue<Expr> queue = new Queue<Expr>();

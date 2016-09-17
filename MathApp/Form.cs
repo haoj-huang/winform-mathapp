@@ -13,7 +13,7 @@ using MathNet.Symbolics;
 using Expr = MathNet.Symbolics.Expression;
 using Eval = MathNet.Symbolics.Evaluate;
 
-namespace WindowsFormsApplication1
+namespace mathapp
 {
     public partial class MathApp : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace mathapp
 {
     partial class MathApp
     {
